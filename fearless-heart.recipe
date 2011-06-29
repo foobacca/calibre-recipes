@@ -1,0 +1,11 @@
+class FearlessHeartRecipe(BasicNewsRecipe):
+    title          = u'Fearless Heart'
+    oldest_article = 360
+    max_articles_per_feed = 50
+    no_stylesheets = True
+    # remove before <div id='main-wrapper'>
+    remove_tags_before = dict(name='div', attrs={'id':'main-wrapper'})
+    remove_tags_after  = dict(name='div', attrs={'class':'comment-form'})
+
+    feeds          = [(u'The Fearless Heart', u'http://feeds.feedburner.com/baynvc')]
+

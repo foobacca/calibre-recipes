@@ -1,0 +1,14 @@
+class TheEdge(BasicNewsRecipe):
+    title          = u'The Edge'
+    oldest_article = 365
+    max_articles_per_feed = 20
+    no_stylesheets = True
+    remove_tags_before = dict(name='h1')
+
+    feeds          = [(u'edge', u'http://edge.org/feeds')]
+
+    def print_version(self, url):
+        return url.replace('edge.org/conversation/', 'edge.org/print/conversation.php?cid=')
+
+    def is_link_wanted(url, tag):
+        return (url.find('conversation') >= 0)
